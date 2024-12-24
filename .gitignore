@@ -1,40 +1,41 @@
-# Ignore Python bytecode and cache files
+# Python cache files
 __pycache__/
 *.py[cod]
 
-# Ignore virtual environment directories
+# Virtual environment directories
 venv/
 env/
 
-# Ignore large dataset files and folders
+# Dataset directory (ignored to avoid large files in the repository)
 Dataset/
+
+# Ignore specific file types
 *.csv
 *.zip
-*.json
 *.log
+*.json
 
-# Ignore IDE configuration files
+# IDE configuration files
 .vscode/
 .idea/
-*.iml
 
-# Ignore macOS system files
+# macOS system files
 .DS_Store
 
-# Ignore temporary and backup files
+# Temporary and backup files
 *.tmp
 *.swp
 *.bak
 
-# Ignore Jupyter Notebook checkpoints
+# Jupyter Notebook checkpoints
 .ipynb_checkpoints/
 
-# Ignore compiled binary files
+# Compiled binary files
 *.so
 *.o
 *.a
 *.out
 
-# Allow specific important files (if needed)
+# Do not ignore specific important files
 !important_file.csv
 
