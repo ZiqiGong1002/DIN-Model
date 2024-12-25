@@ -11,6 +11,12 @@ data = pd.read_csv('Dataset/final_data.csv')
 # Initialize the dataset
 dataset = RecommendationDataset(data)
 
+# Call the new coverage calculation method
+coverage = dataset.__calculate_coverage__()
+print("Coverage Information:")
+print("Click Sequence Coverage:", coverage["click_coverage"])
+print("Purchase Sequence Coverage:", coverage["purchase_coverage"])
+
 # Test the dataset
 print("Dataset size:", len(dataset))
 sample = dataset[0]  # Get the first sample
@@ -25,10 +31,10 @@ print("Label:", sample['label'])
 batch_size = 32
 dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
 
-
-
-
-
-
-
-
+# Test DataLoader
+for batch in dataloader:
+    print("Batch - Discrete Features:", batch['discrete'].shape)
+    print("Batch - Click Sequences:", batch['click_seq'].shape)
+    print("Batch - Purchase Sequences:", batch['purchase_seq'].shape)
+    print("Batch - Labels:", batch['label'].shape)
+    break  # Print the first batch only
